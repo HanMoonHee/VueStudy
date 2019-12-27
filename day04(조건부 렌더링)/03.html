@@ -1,0 +1,28 @@
+<!-- 조건부 렌더링(v-if) -->
+<body>
+    <div id="app">
+        <p>
+            <span v-if=' dayofWeek==1 '>월요일</span>
+            <span v-else-if=' dayofWeek==2 '>화요일</span>
+            <span v-else-if=' dayofWeek==3 '>수요일</span>
+            <span v-else-if=' dayofWeek==4 '>목요일</span>
+            <span v-else-if=' dayofWeek==5 '>금요일</span>
+            <span v-else-if=' dayofWeek==6 '>토요일</span>
+            <span v-else>일요일</span>
+        </p>
+        <button onclick="rand()">오늘은?</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            dayofWeek: (new Date()).getDay()
+        }
+    });
+    function rand(){
+        app.dayofWeek = Math.floor(Math.random()*7);
+    };
+    </script>
+</body>

@@ -1,0 +1,15 @@
+<body>
+<div id="app">
+    <h1 v-html='str'></h1>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        str: '문자를 <strong>굵게</strong> 또는 <em>기울리고</em> 할수있다.'
+    }
+});
+</script>
+</body>

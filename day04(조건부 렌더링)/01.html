@@ -1,0 +1,27 @@
+<!-- 조건부 렌더링 (v-show) -->
+<body>
+    <div id="app">
+        <div v-show='isLoginBoxShow'><!-- 디렉티브의 속성값은 기본적으로 JS구문이다. -->
+            <p>비로그인 상태 화면</p>
+            <button onclick="login();">로그인</button>
+        </div>
+        <div v-show='!isLoginBoxShow'><!-- !는 true/false를 토글하는 논리 연산자이다. -->
+            <p>로그인 상태 화면</p>
+            <button onclick="logout();">로그아웃</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: { isLoginBoxShow: true }
+    });
+    function login(){
+      app.isLoginBoxShow = false;  
+    };
+    function logout(){
+        app.isLoginBoxShow = true;
+    };
+    </script>
+</body>

@@ -1,0 +1,21 @@
+<!-- Data 옵션은 반응형 -->
+<body>
+    <div id="app">
+        <h1>dataPropertyIsReactive = "{{ dataPropertyIsReactive }}"</h1>
+        <button onclick="changeData();">변해라</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            dataPropertyIsReactive: "dummy"
+        }
+    });
+    function changeData(){
+        const now = new Date();
+        app.dataPropertyIsReactive = now.toLocaleString();
+    };
+    </script>
+</body>

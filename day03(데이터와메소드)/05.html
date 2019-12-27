@@ -1,0 +1,28 @@
+<!-- 계산된 속성 (Computed Property) -->
+<body>
+<div id="app">
+    <h1>{{ computedProperty }}</h1>
+    <h1>{{ computedProperty }}</h1>
+    <h1>{{ computedProperty }}</h1>
+    <button onclick="changeData();">변해라!</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            int: 10
+        },
+        computed: {
+            computedProperty(){
+                console.log("recompute?!");
+                return this.int + 1;
+            }
+        }
+    });
+    function changeData(){
+        app.int = Math.round(Math.random()*10);
+    };
+</script>
+</body>
