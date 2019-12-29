@@ -1,0 +1,22 @@
+<!-- v-bind 디렉티브와 일반 속성의 중복 -->
+<body>  
+    <div id="app">
+      <p :class=' attrNamesArray '>배열 지정</p>
+      <p :class=' attrNamesObject '>객체 지정</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        attrNamesArray: ["btn", "btn-primary", "btn-block"],
+        attrNamesObject: {
+          attrName: true,
+          hideAttr: false,
+          'attr-name': true
+        }
+      }
+    });
+    </script>
+</body>

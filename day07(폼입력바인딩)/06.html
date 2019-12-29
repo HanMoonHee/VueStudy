@@ -1,0 +1,24 @@
+<!-- v-model을 사용한 양방향 바인딩 -->
+<body>
+    <div id="app">
+        <select multiple v-model=' select '>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+        </select>
+        <h1>{{ select }}</h1>
+        <textarea v-model=' select '></textarea>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+        el: "#app",
+        data: { 
+            select: []
+        }
+    });
+    </script>
+</body>

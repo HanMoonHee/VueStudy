@@ -1,0 +1,15 @@
+<!-- v-bind 디렉티브와 일반 속성의 중복 -->
+<body>  
+    <ul id="app">
+      <a :style=' redFont ' style="font-size: 3em;">스타일 바인딩</a>
+      <a :class=' "bomb" ' class="love">클래스 바인딩</a>
+    </ul>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+      el: "#app",
+      data: { redFont: "color: red;" }
+    });
+    </script>
+</body>

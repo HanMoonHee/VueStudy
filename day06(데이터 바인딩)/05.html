@@ -1,0 +1,20 @@
+<!-- v-bind 디렉티브와 일반 속성의 중복 -->
+<body>  
+    <div id="app">
+      <p :style=' { fontSize: "0.9em", color: "#999999" } '>인라인 객체로 지정</p>
+      <p :style=' styleObject '>객체로 지정</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        styleObject: {
+          fontSize: 32 + "px",
+          fontWeight: "bold"
+        }
+      }
+    });
+    </script>
+</body>

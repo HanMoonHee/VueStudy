@@ -1,0 +1,15 @@
+<!-- v-bind 디렉티브와 일반 속성의 중복 -->
+<body>  
+    <ul id="app">
+      <li><a :href=' url ' href="http://google.com/">어디일까?</a></li>
+      <li><a href="http://google.com/" :href=' url ' >똑같을까?</a></li>
+    </ul>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+      el: "#app",
+      data: { url: "https://start-vue.js-web.app" }
+    });
+    </script>
+</body>

@@ -1,0 +1,24 @@
+<!-- 입력폼과 데이터 연결 -->
+<body>
+    <div id="app">
+        <h1>{{ value }}</h1>
+        <input id="INPUT" type="text" :value=' value ' @keypress=' setValue() '>
+        <button @click=' setDefault() '>기본값</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+        el: "#app",
+        data: { value: "default" },
+        methods: {
+            setValue: function(){
+                this.value = document.getElementById("INPUT").value;
+            },
+            setDefault: function(){
+                this.value="default";
+            }
+        }
+    });
+    </script>
+</body>
