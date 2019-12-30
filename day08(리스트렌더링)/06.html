@@ -1,0 +1,34 @@
+<!-- v-for에 동적인 데이터(배열) 사용 -->
+<body>
+    <ul id="app">
+       <li v-for=' (no, i) in arr '>
+           <button @click= 'remove(i)'>X</button> {{ no }}
+       </li>
+       <li>
+           <button @click= 'append(1)'>+1</button>
+           <button @click= 'append(5)'>+5</button>
+           <button @click= 'append(10)'>+10</button>
+       </li>
+    </ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({ 
+        el: "#app",
+        data: {
+            cur: 0,
+            arr: []
+        },
+        methods: {
+            append: function(x){
+                for(let i=0; i<x; i++){
+                    this.arr.push( ++this.cur )
+                }
+            },
+            remove: function(index){
+                this.arr.splice(index, 1);
+            }
+        }
+    });
+    </script>
+</body>

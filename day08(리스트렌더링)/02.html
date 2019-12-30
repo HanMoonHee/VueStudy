@@ -1,0 +1,17 @@
+<!-- v-for 단순 반복을 이용한 구구단 -->
+<body>
+    <div id="app">
+        <ul v-for=' i in 9 ' style="display: inline-block;">
+            <li v-for=' j in 9 '>
+                {{ i }} x {{ j }} = {{ i * j }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({ 
+        el: "#app"
+    });
+    </script>
+</body>
